@@ -43,12 +43,20 @@ class CursoViewSet(viewsets.ModelViewSet):
     
     @action(detail=True, methods=['get'])
     def avaliacoes(self, request, pk=None):
-        curso = self.get_objects()
+        curso = self.get_object()
         serializer = AvaliacaoSerializer(curso.avaliacoes.all(), many=True)
         return Response(serializer.data)
     
     
+
+''' VIEWSET PADRÃO
 class AvaliacaoViewSet(viewsets.ModelViewSet):
+    queryset = Avaliacao.objects.all()
+    serializer_class = AvaliacaoSerializer
+'''
+
+# VIEWSET CUSTOMIZADA
+class AvaliacaoViewSet(mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, viewsets.GenericViewSet):
     queryset = Avaliacao.objects.all()
     serializer_class = AvaliacaoSerializer
 
