@@ -1,0 +1,1 @@
+Repositório destinado para o Curso de Django API REST do canal UB Social (https://www.youtube.com/@ubsocialsite)
