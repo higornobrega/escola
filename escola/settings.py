@@ -137,5 +137,3 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE':2
 }
-
-#  Token 5d37e4a61836112c64716ee0a6c15f541a6834c6
